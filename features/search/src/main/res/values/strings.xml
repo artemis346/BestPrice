@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="empty_list">Start new search</string>
+    <string name="search_placeholder">Search best offers!</string>
+    <string name="section_under_development">Section under development</string>
+</resources>

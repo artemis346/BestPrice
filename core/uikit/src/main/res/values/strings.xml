@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Best sales!</string>
+    <string name="error_view_button">Try again!</string>
+    <string name="error_content_try_again">Couldn\'t load data try again later</string>
+    <string name="error_content_empty_content">No result found</string>
+    <string name="price_is">Price:</string>
+</resources>

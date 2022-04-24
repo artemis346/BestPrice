@@ -1,0 +1,21 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+android androidConfiguration
+
+dependencies {
+    implementation project(path: ':network')
+    implementation project(path: ':repositories')
+    implementation project(path: ':repositories-impl')
+    implementation project(path: ':features:search')
+    implementation project(path: ':core:uikit')
+}
+
+dependencies {
+    kapt diLibs.hiltCompiler
+    implementation diLibs.hilt
+    implementation coreLibs.values()
+}
