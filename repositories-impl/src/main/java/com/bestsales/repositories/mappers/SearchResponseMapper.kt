@@ -6,7 +6,7 @@ import com.bestsales.repositories.domain.ProductDto
 
 
 fun SearchResponse.mapToDomain(): List<ProductDto> {
-    return products.map { item ->
+    return products?.map { item ->
         return@map ProductDto(
             id = item.id,
             name = item.name,
@@ -17,5 +17,5 @@ fun SearchResponse.mapToDomain(): List<ProductDto> {
             ),
             isNextDayDelivery = item.nextDayDelivery
         )
-    }
+    } ?: listOf()
 }

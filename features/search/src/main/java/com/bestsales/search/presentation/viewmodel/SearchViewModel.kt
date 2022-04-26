@@ -64,7 +64,7 @@ class SearchViewModel @Inject constructor(var repository: ISearchRepository) :
                 }
                 .map { mapResult(it) }
                 .collect {
-                    listData.value = SearchUiState.Success(flow { emit(it) })
+                    listData.value = SearchUiState.Success(flowOf(it))
                 }
         }
     }

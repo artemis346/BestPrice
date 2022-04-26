@@ -14,6 +14,5 @@ sealed class SearchUiState {
 }
 
 enum class ErrorState(@StringRes val message: Int) {
-    ERROR_LOADING(R.string.error_content_try_again),
-    EMPTY_CONTENT(R.string.error_content_empty_content)
+    ERROR_LOADING(R.string.error_content_try_again)
 }

@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class SearchResponse(
 
     @SerializedName("products")
-    val products: List<Product>,
+    val products: List<Product>?,
 
     @SerializedName("currentPage")
     val currentPage: Int,

@@ -153,7 +153,6 @@ class SearchFragment : Fragment() {
                 }
             }
         }
-
     }
 
     @OptIn(ExperimentalMaterialApi::class)

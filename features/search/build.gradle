@@ -34,4 +34,5 @@ dependencies {
     implementation uiLibs.values()
     implementation imageLoader.landscapistGlide
     implementation viewModel.values()
+    implementation test.values()
 }

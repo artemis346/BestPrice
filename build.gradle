@@ -31,6 +31,8 @@ ext {
             targetSdkVersion androidTargetSdk
 
             multiDexEnabled true
+
+            testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         }
 
         compileOptions {

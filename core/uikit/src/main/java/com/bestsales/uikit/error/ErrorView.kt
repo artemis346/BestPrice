@@ -1,6 +1,5 @@
 package com.bestsales.uikit.error
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
 import androidx.compose.material.Text

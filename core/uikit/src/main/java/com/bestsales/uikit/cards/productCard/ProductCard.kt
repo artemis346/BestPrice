@@ -20,8 +20,12 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.ConstraintSet
 import androidx.constraintlayout.compose.Dimension
 import com.bestsales.uikit.R
+import com.bestsales.uikit.cards.productCard.LayoutIds.imageProduct
+import com.bestsales.uikit.cards.productCard.LayoutIds.txtBasePrice
+import com.bestsales.uikit.cards.productCard.LayoutIds.txtPrice
+import com.bestsales.uikit.cards.productCard.LayoutIds.txtPriceLabel
+import com.bestsales.uikit.cards.productCard.LayoutIds.txtTitle
 import com.skydoves.landscapist.glide.GlideImage
-import java.time.format.TextStyle
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
@@ -54,7 +58,7 @@ fun ProductCard(item: ProductItem, onClick: () -> Unit) {
             Text(
                 text = item.price,
                 modifier = Modifier
-                    .layoutId("price"),
+                    .layoutId(txtPrice),
                 style = style
             )
 
@@ -62,7 +66,7 @@ fun ProductCard(item: ProductItem, onClick: () -> Unit) {
                 text = stringResource(id = R.string.price_is),
                 fontSize = 16.sp,
                 modifier = Modifier
-                    .layoutId("priceLabel"),
+                    .layoutId(txtPriceLabel),
                 color = colorResource(R.color.black),
             )
 
@@ -71,7 +75,7 @@ fun ProductCard(item: ProductItem, onClick: () -> Unit) {
                     text = item.basePrice,
                     fontSize = 16.sp,
                     modifier = Modifier
-                        .layoutId("basePrice"),
+                        .layoutId(txtBasePrice),
                     color = colorResource(R.color.black),
                     textDecoration = TextDecoration.LineThrough
                 )
@@ -80,7 +84,7 @@ fun ProductCard(item: ProductItem, onClick: () -> Unit) {
             GlideImage(
                 modifier = Modifier
                     .defaultMinSize(100.dp, 200.dp)
-                    .layoutId("image")
+                    .layoutId(imageProduct)
                     .padding(8.dp),
                 imageModel = item.imgLink,
                 contentScale = ContentScale.FillWidth,
@@ -93,7 +97,7 @@ fun ProductCard(item: ProductItem, onClick: () -> Unit) {
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
                 modifier = Modifier
-                    .layoutId("title")
+                    .layoutId(txtTitle)
                     .padding(8.dp),
                 color = colorResource(R.color.black),
                 maxLines = 2
@@ -104,11 +108,11 @@ fun ProductCard(item: ProductItem, onClick: () -> Unit) {
 
 private fun decoupledConstraints(): ConstraintSet {
     return ConstraintSet {
-        val image = createRefFor("image")
-        val title = createRefFor("title")
-        val price = createRefFor("price")
-        val priceLabel = createRefFor("priceLabel")
-        val basePrice = createRefFor("basePrice")
+        val image = createRefFor(imageProduct)
+        val title = createRefFor(txtTitle)
+        val price = createRefFor(txtPrice)
+        val priceLabel = createRefFor(txtPriceLabel)
+        val basePrice = createRefFor(txtBasePrice)
 
 
         constrain(image) {
@@ -141,4 +145,12 @@ private fun decoupledConstraints(): ConstraintSet {
             bottom.linkTo(priceLabel.bottom)
         }
     }
+}
+
+internal object LayoutIds {
+    const val imageProduct: String = "img"
+    const val txtTitle: String = "txtTitle"
+    const val txtPrice: String = "txtPrice"
+    const val txtPriceLabel: String = "txtPriceLabel"
+    const val txtBasePrice: String = "txtBasePrice"
 }

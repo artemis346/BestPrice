@@ -4,10 +4,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import com.bestsales.network.api.search.SearchApi
-import com.bestsales.network.api.search.SearchResponse
 import com.bestsales.repositories.domain.ProductDto
-import com.bestsales.repositories.mappers.mapToDomain
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 

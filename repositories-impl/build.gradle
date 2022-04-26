@@ -10,9 +10,6 @@ android androidConfiguration
 dependencies {
     implementation project(path: ':network')
     implementation project(path: ':repositories')
-//    implementation project(path: ':sharedprefs')
-//    implementation project(path: ':database')
-//    implementation project(path: ':core:utils')
 }
 
 dependencies {
@@ -23,4 +20,5 @@ dependencies {
     implementation network.gson
     implementation uiLibs.pagingRuntime
     implementation uiLibs.paging
+    testImplementation test.values()
 }
